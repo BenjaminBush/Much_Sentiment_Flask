@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect
-import flask.ext.pymongo import PyMongo
+from flask.ext.pymongo import PyMongo
 
 muchsentiment = Flask(__name__)
 
