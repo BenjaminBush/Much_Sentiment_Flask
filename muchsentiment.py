@@ -11,15 +11,15 @@ muchsentiment.config['MONGO_PASSWORD'] = 'coldlikeminnesota'
 
 mongo = PyMongo(muchsentiment)
 
-@app.route('/')
+@muchsentiment.route('/')
 def main():
   return redirect('/index')
 
-@app.route('/index')
+@muchsentiment.route('/index')
 def index():
   return render_template('index.html')
 
-@app.route('api/speakers', methods=['GET'])
+@muchsentiment.route('api/speakers', methods=['GET'])
 def getSpeakers():
 	speakers = mongo.db.speakers
 	result = speakers.find({})
