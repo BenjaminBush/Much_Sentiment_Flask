@@ -20,7 +20,7 @@ def main():
 def index():
   return render_template('index.html')
 
-@muchsentiment.route('api/speakers', methods=['GET'])
+@muchsentiment.route('/api/speakers', methods=['GET'])
 def getSpeakers():
 	speakers = mongo.db.speakers
 	result = speakers.find({})
