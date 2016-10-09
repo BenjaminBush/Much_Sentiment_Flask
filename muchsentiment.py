@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, redirect
 import flask.ext.pymongo import PyMongo
-from routes import views
 
 muchsentiment = Flask(__name__)
 
@@ -10,6 +9,9 @@ muchsentiment.config['MONGO_USERNAME'] = 'dembois'
 muchsentiment.config['MONGO_PASSWORD'] = 'coldlikeminnesota'
 
 mongo = PyMongo(muchsentiment)
+
+
+from routes import views
 
 @muchsentiment.route('/')
 def main():
