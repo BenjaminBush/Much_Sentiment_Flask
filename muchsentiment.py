@@ -1,13 +1,15 @@
 from flask import Flask, render_template, request, redirect
 import flask.ext.pymongo import PyMongo
+from routes import views
 
-app = Flask(__name__)
+muchsentiment = Flask(__name__)
 
-app.config['MONGO_DBNAME'] = 'prod'
-app.config['MONGO_URI'] = 'mongodb://ec2-52-38-154-245.us-west-2.compute.amazonaws.com:27017/prod'
-app.config['MONGO_USERNAME'] = 'dembois'
-app.config['MONGO_PASSWORD'] = 'coldlikeminnesota'
-mongo = PyMongo(app)
+muchsentiment.config['MONGO_DBNAME'] = 'prod'
+muchsentiment.config['MONGO_URI'] = 'mongodb://ec2-52-38-154-245.us-west-2.compute.amazonaws.com:27017/prod'
+muchsentiment.config['MONGO_USERNAME'] = 'dembois'
+muchsentiment.config['MONGO_PASSWORD'] = 'coldlikeminnesota'
+
+mongo = PyMongo(muchsentiment)
 
 @app.route('/')
 def main():
@@ -24,4 +26,4 @@ def getSpeakers():
 	return result
 
 if __name__ == '__main__':
-  app.run(port=33507)
+  muchsentiment.run(port=33507)
