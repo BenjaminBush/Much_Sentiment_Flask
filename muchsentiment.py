@@ -11,7 +11,7 @@ muchsentiment.config['MONGO_PASSWORD'] = 'coldlikeminnesota'
 mongo = PyMongo(muchsentiment)
 
 
-from routes import views
+from routes.view import *
 
 @muchsentiment.route('/')
 def main():
