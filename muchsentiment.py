@@ -11,8 +11,7 @@ muchsentiment.config['MONGO_PASSWORD'] = 'coldlikeminnesota'
 mongo = PyMongo(muchsentiment)
 
 
-from routes.views import *
-
+# Just do all of the routing in here
 @muchsentiment.route('/')
 def main():
   return redirect('/index')
